@@ -57,7 +57,7 @@ public class HelloWorldController {
 		if (auth != null) {
 			securityContextLogoutHandle.logout(request, response, auth);
 		}
-		return "redirect:/home";
+		return "redirect:/login";
 	}
 
 	@RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
