@@ -21,6 +21,10 @@
         			password-parameter="password"
         			login-processing-url="/login"      			
         			authentication-failure-url="/authenticationFailure"/>
+        <remember-me remember-me-parameter="remember-me" 
+        			 remember-me-cookie="remember-me"
+        			 token-validity-seconds="3600"
+        			 data-source-ref="dataSource"/>
     </http>
   
     <authentication-manager >
