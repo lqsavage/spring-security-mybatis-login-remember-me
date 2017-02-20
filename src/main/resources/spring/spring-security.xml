@@ -9,6 +9,8 @@
     
     <beans:bean id="securityContextLogoutHandle" 
     	class="org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler"/>
+    	
+   	<beans:bean id="jdbcTokenRepository" class="org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl"/>
 	
 	<http auto-config="true" use-expressions="true">
 		<intercept-url pattern="/" access="hasRole('ADMIN') or hasRole('USER') or hasRole('DBA')" />
@@ -24,7 +26,8 @@
         <remember-me remember-me-parameter="remember-me" 
         			 remember-me-cookie="remember-me"
         			 token-validity-seconds="3600"
-        			 data-source-ref="dataSource"/>
+        			 data-source-ref="dataSource"
+        			 token-repository-ref="jdbcTokenRepository"/>
     </http>
   
     <authentication-manager >
