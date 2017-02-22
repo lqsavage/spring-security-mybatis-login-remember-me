@@ -26,7 +26,9 @@
 <security:authorize access="hasRole('USER')">
 	<strong>具有USER权限的人可以看到的内容。</strong><br/>
 </security:authorize>
-<a href="<c:url value="/logout" />">Logout</a>
-
+<a href="<c:url value="/logout" />">Logout</a></br>
+<security:authorize access="isRememberMe()">
+   <label><a href="#">View existing Users</a></label>
+</security:authorize>
 </body>
 </html>
